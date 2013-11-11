@@ -6,9 +6,9 @@
 #include "keyboard.h"
 
 uchar k;
-uint capslock;
-uint numlock;
-uint scrolllock;
+bool capslock;
+bool numlock;
+bool scrolllock;
 
 void keyboard(registers r)
 {
@@ -18,15 +18,15 @@ if((inb(0x64) & 2) == 0)
 {
 if(k==keycodes[58])
 {
-capslock=1;
+capslock=true;
 }
 else if(k==keycodes[69])
 {
-numlock=1;
+numlock=true;
 }
 else if(k==keycodes[70])
 {
-scrolllock=1;
+scrolllock=true;
 }
 }
 if(capslock==1)
@@ -43,15 +43,15 @@ outb(0x60, 0xED0);
 }
 if(k==keycodes[58]&&capslock==1)
 {
-capslock=0;
+capslock=false;
 }
 if(k==keycodes[69]&&numlock==1)
 {
-numlock=0;
+numlock=false;
 }
 if(key==keycodes[70]&&scrolllock==1)
 {
-scrolllock=0;
+scrolllock=false;
 }
 }
 
