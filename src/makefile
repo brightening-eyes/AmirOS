@@ -21,4 +21,4 @@ link: all
 	gcc $(LDFLAGS) $(obj) -o ../iso/boot/amiros
 
 image: link
-	mkisofs -R -b boot/grub/stage2_eltorito -no-emul-boot -V "AmirOS" -boot-load-size 4 -boot-info-table -o ../AmirOS.iso ../iso
+	mkisofs -R -b boot/grub/i386-pc/cdboot.img -no-emul-boot -V "AmirOS" -boot-load-size 4 -boot-info-table -o ../AmirOS.iso ../iso

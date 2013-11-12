@@ -1,0 +1,6 @@
+default 0
+timeout 30
+
+# For booting Amir OS
+title AmirOS
+kernel /boot/AmirOS
