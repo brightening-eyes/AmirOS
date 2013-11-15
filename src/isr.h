@@ -7,6 +7,7 @@ uint ebx;
 uint ecx;
 uint edx;
 uint eip;
+uint eflags;
 uint esp;
 uint ebp;
 uint ss;
@@ -19,7 +20,6 @@ uint cs;
 uint eci;
 uint errnum;
 uint errcode;
-uint flags;
 }registers;
 
 typedef void (*isr_event)(registers);

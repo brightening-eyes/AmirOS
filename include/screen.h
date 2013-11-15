@@ -1,7 +1,6 @@
 #ifndef _AMIROS_SCREEN_
 #define _AMIROS_SCREEN_
 
-
 enum colors
 {
 black=0,

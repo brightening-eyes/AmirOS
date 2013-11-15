@@ -2,7 +2,6 @@
 
 global Boot
 global gdt_setup
-global usermode_setup
 global idt_setup
 global inb
 global outb
@@ -57,6 +56,8 @@ global irq14
 global irq15
 global irq_stub
 extern LoadKernel
+extern gdt_desc_ptr
+extern idt_desc_ptr
 extern isr_handler
 extern irq_handler
 
@@ -81,8 +82,7 @@ call LoadKernel ;load are Operating System kernel
 jmp $
 section .text
 gdt_setup:
-mov eax, [esp+4]
-LGDT[eax]
+LGDT[gdt_desc_ptr]
 mov eax, 0x10
 mov ds, eax
 mov es, eax
@@ -92,28 +92,11 @@ mov ss, eax
 jmp 0x08:.flush
 
 .flush:
-
-usermode_setup:
-call disable_idt
-mov eax, 0x23
-mov ds, eax
-mov es, eax
-mov fs, eax
-mov gs, eax
-mov esp, eax
-push 0x23
-push eax
-pushf
-push 0x1b
-pop eax
-or eax, 200
-push eax
-mov eax, 0x2B
-ltr [eax]
+ret
 
 idt_setup:
-mov eax, [esp+4]
-LIDT[eax]
+LIDT[idt_desc_ptr]
+ret
 
 outb:
     ; Get arguments

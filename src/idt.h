@@ -4,7 +4,7 @@
 /*
 *IDT functions
 */
-extern void idt_setup(uint);
+extern void idt_setup();
 void idt_init();
 void idt_set_gate(uint, uint, uint, uint);
 

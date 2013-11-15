@@ -1,5 +1,5 @@
 incdir=../include
-CFLAGS=-I $(incdir) -ffreestanding -nostdinc -std=gnu99 -w
+CFLAGS=-I $(incdir) -ffreestanding -nostdinc -std=gnu99 -Wall -Wextra
 LDFLAGS=-T ../linker/link.ld -nostdlib -nodefaultlibs -lgcc
 ASFLAGS=-f elf
 obj=asm.o gdt.o idt.o init.o irq.o isr.o keyboard.o main.o memory.o timer.o vga.o

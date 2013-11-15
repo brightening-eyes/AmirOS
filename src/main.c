@@ -6,5 +6,6 @@ void LoadKernel()
 {
 init();
 clrscr();
+set_color(black, white);
 print("Wellcome to AmirOS!\n");
 }

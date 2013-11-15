@@ -8,12 +8,15 @@ uint timer_tics;
 
 void timer(registers r)
 {
-int hz;
+int hz=50;
 int divisor=1193180/hz;
 outb(0x43, 0x36);
 outb(0x40, divisor&0xFF);
 outb(0x40, divisor>>8);
+do
+{
 timer_tics++;
+}
 while(timer_tics%100==0);
 }
 

@@ -72,7 +72,7 @@ memset(&idt_desc, 0, sizeof(idt)*256);
     idt_set_gate(45, (uint)irq13, 0x08, 0x8E);
     idt_set_gate(46, (uint)irq14, 0x08, 0x8E);
     idt_set_gate(47, (uint)irq15, 0x08, 0x8E);
-idt_setup((uint)&idt_desc_ptr);
+idt_setup();
 }
 
 /*
