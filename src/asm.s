@@ -80,6 +80,7 @@ Boot:
 push ebx ;takes the multiboot structure
 call LoadKernel ;load are Operating System kernel
 jmp $
+
 section .text
 gdt_setup:
 LGDT[gdt_desc_ptr]
@@ -99,20 +100,14 @@ LIDT[idt_desc_ptr]
 ret
 
 outb:
-    ; Get arguments
-    mov al, [esp + 8] ; value
-    mov dx, [esp + 4] ; addr
-
-    ; Write out
-    out dx, al
-    ret
+mov al, [esp + 8] ; value
+mov dx, [esp + 4] ; addr
+out dx, al
+ret
 
 inb:
-    ; Get argument
-    mov dx, [esp + 4]
-
-    ; Read in
-    in al, dx
+mov dx, [esp + 4]
+in al, dx
 ret
 
 halt:

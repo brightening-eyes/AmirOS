@@ -46,7 +46,8 @@ isr_event t=isr[r.errnum];
 t(r);
 if(r.errnum<32)
 {
-print((pointer)expmsg[r.errnum], "halting!");
+print(expmsg[r.errnum]);
+print("\nhalting!");
 for(;;);
 }
 }

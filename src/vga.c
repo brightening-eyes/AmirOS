@@ -10,7 +10,7 @@ color clr;
 void scr()
 {
 uint blank, tmp;
-uint attribute=0<<8;
+uint attribute=clr<<8;
 blank=0x20|(attribute);
 if(curser_y>=25)
 {
@@ -31,36 +31,26 @@ outb(0x3D4, 15);
 outb(0x3D5, tmp);
 }
 
-void print(pointer p, ...)
+void print(char c)
 {
-pointer v;
-pointer vidmem=0xB8000;
-pointer a;
-int attribute=0<<8;
-if(p==0x08||v==0x08)
+int attribute=clr<<8;
+switch(c)
 {
+case 0x08:
 if(curser_x!=0)
 {
 curser_x--;
 }
-}
-else if(p=='\r'||v=='\r')
-{
+case '\r':
 curser_y=0;
-}
-else if(p=='\0'||v=='\0')
-{
+case '\0':
 curser_x++;
-}
-else if(p=='\n'||v=='\n')
-{
+case '\n':
 curser_y=0;
 curser_x++;
-}
-else if(p>=' '||v>=' ')
-{
-a=vidmem+(curser_y*80+curser_x);
-a=(int)p|(int)v|attribute|get_color();
+default:
+vidmem+(curser_y*80+curser_x);
+c|attribute;
 curser_x++;
 }
 if(curser_x>=80)

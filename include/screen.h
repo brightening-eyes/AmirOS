@@ -24,7 +24,7 @@ white=15
 typedef enum colors color;
 
 void clrscr();
-void print(pointer, ...);
+void print(char);
 void set_color(color bg, color fg);
 color get_color();
 
