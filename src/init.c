@@ -9,6 +9,6 @@ void init()
 {
 gdt_init();
 idt_init();
-timer_init();
+timer_init(50);
 keyboard_init();
 }

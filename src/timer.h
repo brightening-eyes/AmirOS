@@ -3,7 +3,7 @@
 
 #include <timer.h>
 
-void timer_init();
+void timer_init(uint);
 void timer (registers);
 
 #endif
