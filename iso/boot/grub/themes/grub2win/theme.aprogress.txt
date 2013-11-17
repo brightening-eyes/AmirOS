@@ -1,0 +1,76 @@
+title-text: "Grub2Win"
+title-color: "red"
+message-color: "white"
+message-bg-color: "0, 166, 183"
+desktop-image: "background.png"
+terminal-box:  "menubox_*.png"
+
++ boot_menu {
+   left   = 15%
+   top    = 15%
+   width  = 50%
+   height = 65%
+   item_color = green
+   selected_item_color = magenta
+   icon_width   = 35%
+   icon_height  = 35%
+   item_height  = 40%
+   item_padding = 5%
+   item_icon_space = 12%
+   item_spacing    = 10%
+}
+
++ vbox 
+   {
+       left   = 86%
+       top    = 10%
+       width  = 13%
+       height = 15%
+      + label { text="GRand"       color=#99F }
+      + label { text="Unified"     color=#BBF }
+      + label { text="Bootloader"  color=#DDF }
+}
+
++ image 
+   {
+       left   = 85%
+       top    = 25%
+       width  = 4%
+       height = 5%
+       file   = "powered.png"
+}
+
+# Informational message bar at the bottom of the screen.
++ vbox {
+       left   = 20%
+       top    = 80%
+       width  = 80%
+       height = 10%
+   + label { 
+      text="Select an item with the arrow keys and press Enter to boot."
+      color="white"
+   }
+   + label { 
+      text="Press:  'c' for a grub command line."
+      color="white"
+   }
+}
+
+# By defining a 'progress_bar' type component with an ID of '__timeout__',
+# the progress bar will be used to display the time remaining before an 
+# the default entry is automatically booted.
+
++ progress_bar
+{
+   id = "__timeout__"
+   left   = 20%
+   top    = 90%
+   width  = 40%
+   height = 3%
+   text = "@TIMEOUT_NOTIFICATION_LONG@"
+   text_color = green
+   fg_color = magenta
+   bg_color = blue
+   border_color = green
+   show_text = true
+}

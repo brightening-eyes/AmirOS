@@ -1,1 +1,4 @@
 vbe
+vga
+video_bochs
+video_cirrus

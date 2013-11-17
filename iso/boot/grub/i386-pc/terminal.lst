@@ -1,7 +1,7 @@
 iat_keyboard: at_keyboard
 iserial: serial
-iusb_keyboard: usb_keyboard
+iserial_*: serial
 ogfxterm: gfxterm
 oserial: serial
-ovga: vga
+oserial_*: serial
 ovga_text: vga_text
