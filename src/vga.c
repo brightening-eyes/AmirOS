@@ -31,7 +31,7 @@ outb(0x3D4, 15);
 outb(0x3D5, tmp);
 }
 
-void print(char c)
+void printc(char c)
 {
 int attribute=clr<<8;
 switch(c)
@@ -87,3 +87,11 @@ color get_color()
 return clr<<4;
 }
 
+void print(char *c)
+{
+int i = 0;
+while (c[i])
+    {
+print(c[i++]);
+}
+}

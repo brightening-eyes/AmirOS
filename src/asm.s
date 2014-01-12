@@ -55,6 +55,7 @@ global irq13
 global irq14
 global irq15
 global irq_stub
+extern end
 extern LoadKernel
 extern gdt_desc_ptr
 extern idt_desc_ptr

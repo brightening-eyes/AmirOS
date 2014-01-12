@@ -1,7 +1,8 @@
 #ifndef _AMIROS_ISR_
 #define _AMIROS_ISR_
 
-typedef struct registers {
+typedef struct registers
+{
 uint eax;
 uint ebx;
 uint ecx;

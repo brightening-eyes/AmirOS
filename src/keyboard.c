@@ -46,15 +46,15 @@ if(scrolllock==1)
 {
 outb(0x60, 0xED0);
 }
-if(k==keycodes[58]&&capslock==1)
+if(k==keycodes[58]&&capslock==true)
 {
 capslock=false;
 }
-if(k==keycodes[69]&&numlock==1)
+if(k==keycodes[69]&&numlock==true)
 {
 numlock=false;
 }
-if(key==keycodes[70]&&scrolllock==1)
+if(key==keycodes[70]&&scrolllock==true)
 {
 scrolllock=false;
 }
@@ -72,5 +72,5 @@ return (uint)k;
 
 uchar convert_key_to_character(uint key)
 {
-return (uchar)k;
+return keycodes[key];
 }

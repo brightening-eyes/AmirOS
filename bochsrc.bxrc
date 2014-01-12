@@ -1,7 +1,7 @@
 megs: 128
-romimage: file="C:\Program Files\Bochs/BIOS-bochs-latest"
-vgaromimage: file="C:\Program Files\Bochs/VGABIOS-lgpl-latest"
-boot: cdrom
+romimage: file="C:\Program Files\Bochs-2.6.2/BIOS-bochs-latest"
+vgaromimage: file="C:\Program Files\Bochs-2.6.2/VGABIOS-lgpl-latest"
+boot: cdrom, disk
 floppya: type=1_44, 1_44="a.img", status=inserted
 floppyb: type=1_44, 1_44="b.img", status=inserted
 ata0: enabled=1, ioaddr1=0x1f0, ioaddr2=0x3f0, irq=14
@@ -13,5 +13,5 @@ debug: action=ignore
 info: action=report
 error: action=report
 panic: action=report
-mouse: enabled=1
+mouse: enabled=0
 cpu: reset_on_triple_fault=0
