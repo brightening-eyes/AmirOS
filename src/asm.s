@@ -1,3 +1,4 @@
+;this file is the everything in the assembly format for the AmirOS operating system
 [bits 32]
 
 global Boot
