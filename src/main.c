@@ -4,6 +4,7 @@
 
 void LoadKernel()
 {
+//initialize AmirOS
 init();
 clrscr();
 set_color(black, white);
